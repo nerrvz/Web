@@ -1,10 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моє Резюме</title>
+
+    <!-- 1. ЗОВНІШНІ СТИЛІ (External) -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- 2. ВНУТРІШНІ СТИЛІ (Internal) -->
+    <style>
+        #main-title {
+            color: var(--title);
+            text-transform: uppercase;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 
+    <header>
+        <h1 id="main-title">Олена Іванишин</h1>
+        <p style="font-weight: bold; text-align: center; font-size: 1.2rem;">Студентка 2 курсу | Початківець у сфері ІТ</p>
+        <div class="theme-bar">
+            <button id="theme-toggle" type="button">Змінити тему</button>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <aside class="sidebar">
+            <h2>Контакти</h2>
+            <ul>
+                <li>Email:<a href="mailto:olena.ivanyshyn.kb.2025@lpnu.ua">olena.ivanyshyn.kb.2025@lpnu.ua</a></li>
+                <li>GitHub:<a href="https://github.com/nerrvz">nerrvz</a></li>
+            </ul>
+            <input type="button" value="Завантажити CV">
+        </aside>
+
+        <main class="content">
+            <section class="card">
+                <h2>Освіта</h2>
+                <p>Національний університет "Львівська політехніка" (2025 — дотепер)</p>
+            </section>
+
+            <section class="card">
+                <h2>Навички</h2>
+                <p>HTML, CSS, базовий React, Git, DevTools.</p>
+            </section>
+
+            <section class="card" id="reviews">
+                <h2>Відгуки попередніх роботодавців</h2>
+                <div id="reviews-list">Завантаження...</div>
+            </section>
+        </main>
+    </div>
+
+    <footer id="site-footer">
+        <h3>Інформація про систему (localStorage)</h3>
+        <ul id="storage-info"></ul>
+    </footer>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <button id="modal-close" type="button">✖</button>
+            <h2>Зворотний зв'язок</h2>
+            <form action="https://formspree.io/f/myeedwlv" method="POST">
+                <label>Ім'я
+                    <input type="text" name="name" required>
+                </label>
+                <label>Email
+                    <input type="email" name="email" required>
+                </label>
+                <label>Номер телефону
+                    <input type="tel" name="phone" required>
+                </label>
+                <label>Повідомлення
+                    <textarea name="message" rows="4" required></textarea>
+                </label>
+                <button type="submit" class="submit-btn">Надіслати</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
